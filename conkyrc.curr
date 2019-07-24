@@ -103,7 +103,7 @@ ${endif}
 ${color1}CONNECTIONS ${hr 2}
 STATE${goto 100}PEER ADDRESS:PORT$color
 #${color2}${execi 10 ss -t | awk '{if (NR!=1) {i = split($4,a,":"); printf "%-12s %-12s %s\n",$1, $5, a[i]}}'}$color
-${color2}${execi 10 ss -t | awk '{if (NR!=1) {printf "%-20s %-30s\n",$1, $5}}'}$color
+${color2}${execi 10 ss -t | awk '{if (NR!=1) {printf "%-20s %-30s\n",$1, $5}}' | sort -u}$color
 
 
 
